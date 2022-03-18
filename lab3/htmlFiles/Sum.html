@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Code</title>
+		<style>
+			body {
+				font: normal normal 18px courier;
+			}
+			.highlight  {
+				color: darkorange;
+			}
+			.number {
+				color: darkseagreen;
+			}
+			.string {
+				color: olivedrab;
+			}
+			.types {
+				color: darkgoldenrod;
+			}
+		</style>
+	</head>
+	<body text="#ffe4c4" bgcolor="#282923">
+		<span class="highlight">public</span> <span class="highlight">class</span> Sum {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">public</span> <span class="highlight">static</span> <span class="types">void</span> main (String args) {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">int</span> sum = <span class="number">0</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">for</span> (<span class="types">int</span> i = <span class="number">0</span>; i < args; i = i + <span class="number">1</span>) {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">int</span> num = <span class="number">0</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">boolean</span> sign = <span class="highlight">false</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">if</span> (num == <span class="number">0</span> && args == <span class="string">'a'</span>)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign = <span class="highlight">true</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">if</span> (sign)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num * <span class="number">-1</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum = sum + sum;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">public</span> <span class="highlight">class</span> B {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">int</span> a = <span class="number">-9</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">boolean</span> b = <span class="highlight">false</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String c = <span class="string">"meow"</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">char</span> d = <span class="string">'a'</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">long</span> r = <span class="number">102L</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">double</span> d = <span class="number">1.0001</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="types">float</span> f = <span class="number">100.777643F</span>;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+		}<br>
+	</body>
+</html>
