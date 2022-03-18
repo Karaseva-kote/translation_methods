@@ -1,0 +1,33 @@
+grammar Calculator;
+
+s returns double : e EOF {return $e;};
+e returns double : t e2($t) {return $e2;};
+e2 (double left) returns double : PLUS t e2(left + $t) {return $e2;}
+    | SUB t e2(left - $t) {return $e2;}
+    | EPS {return left;}
+;
+t returns double : f t2($f) {return $t2;};
+t2 (double left) returns double : MUL f t2(left * $f) {return $t2;}
+    | DIV f t2(left / $f) {return $t2;}
+    | EPS {return left;}
+;
+
+f returns double : p f2 {return $f2.apply($p);};
+f2 returns java.util.function.Function<Double, Double> : POW p f2 {return i -> Math.pow(i, $f2.apply($p));}
+    | EPS {return i -> i;}
+;
+
+p returns double : NUM { return Double.parseDouble($NUM); }
+    | LB e RB { return $e; }
+    | SUB f { return -1 * $f; }
+;
+
+POW : 'pow';
+
+PLUS : '+';
+MUL : '*';
+SUB : '-';
+DIV : '/';
+NUM : [0-9]+;
+LB : '(';
+RB : ')';

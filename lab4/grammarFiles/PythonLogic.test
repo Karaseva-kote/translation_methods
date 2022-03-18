@@ -1,0 +1,27 @@
+a and b
+a or b
+a xor b
+not a
+a
+    not    a    or   (  b )     
+a and not b or c xor d
+(not a and (b or c)) xor d
+not not a or not b and not not not c
+not (a or b) xor a
+((a) or not (b)) xor (c xor c) or not (y xor not not x)
+
+a and
+a or
+a xor
+a or not
+xor
+(a and not b
+not b)
+a b
+a or not()
+a andnot b
+a or not(or)
+() or b
+a or ()
+a ant b
+(a and b) + sth

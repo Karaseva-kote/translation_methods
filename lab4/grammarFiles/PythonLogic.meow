@@ -1,0 +1,16 @@
+grammar PythonLogic;
+
+start : e EOF;
+e : t e2;
+e2 : OR t e2 | XOR t e2 | EPS;
+t : s t2;
+t2 : AND s t2 | EPS;
+s : LB e RB | VAR | NOT s;
+
+OR : 'or';
+XOR : 'xor';
+AND : 'and';
+NOT : 'not';
+LB : '(';
+RB : ')';
+VAR : [a-zA-Z];
