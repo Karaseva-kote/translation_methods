@@ -1,0 +1,128 @@
+ads_featured = ads.assign(
+	cpm_x_dur=ads.cpm*ads.duration,
+	log_cpm_x_dur=np.log(ads.cpm*ads.duration),
+	sqrt_cpm_x_dur=np.sqrt(ads.cpm*ads.duration),
+	cpm_x_npub=ads.cpm*ads.n_publishers,
+	log_cpm_x_npub=np.log(ads.cpm*ads.n_publishers),
+	sqrt_cpm_x_npub=np.sqrt(ads.cpm*ads.n_publishers),
+	cpm_x_bpub=ads.cpm*ads.big_publishers,
+	log_cpm_x_bpub=np.log(ads.cpm*ads.big_publishers),
+	sqrt_cpm_x_bpub=np.sqrt(ads.cpm*ads.big_publishers),
+	cpm_x_cufc=ads.cpm*ads.cnt_users_for_cpm,
+	log_cpm_x_cufc=np.log(ads.cpm*ads.cnt_users_for_cpm),
+	sqrt_cpm_x_cufc=np.sqrt(ads.cpm*ads.cnt_users_for_cpm),
+	cpm_x_ctuc=ads.cpm*ads.cnt_target_users_cpm,
+	log_cpm_x_ctuc=np.log(ads.cpm*ads.cnt_target_users_cpm),
+	sqrt_cpm_x_ctuc=np.sqrt(ads.cpm*ads.cnt_target_users_cpm),
+	cpm_x_ctuh=ads.cpm*ads.cnt_target_users_hour,
+	log_cpm_x_ctuh=np.log(ads.cpm*ads.cnt_target_users_hour),
+	sqrt_cpm_x_ctuh=np.sqrt(ads.cpm*ads.cnt_target_users_hour),
+	dur_x_npub=ads.duration*ads.n_publishers,
+	log_dur_x_npub=np.log(ads.duration*ads.n_publishers),
+	sqrt_dur_x_npub=np.sqrt(ads.duration*ads.n_publishers),
+	dur_x_bpub=ads.duration*ads.big_publishers,
+	log_dur_x_bpub=np.log(ads.duration*ads.big_publishers),
+	sqrt_dur_x_bpub=np.sqrt(ads.duration*ads.big_publishers),
+	dur_x_cufc=ads.duration*ads.cnt_users_for_cpm,
+	log_dur_x_cufc=np.log(ads.duration*ads.cnt_users_for_cpm),
+	sqrt_dur_x_cufc=np.sqrt(ads.duration*ads.cnt_users_for_cpm),
+	dur_x_ctuc=ads.duration*ads.cnt_target_users_cpm,
+	log_dur_x_ctuc=np.log(ads.duration*ads.cnt_target_users_cpm),
+	sqrt_dur_x_ctuc=np.sqrt(ads.duration*ads.cnt_target_users_cpm),
+	dur_x_ctuh=ads.duration*ads.cnt_target_users_hour,
+	log_dur_x_ctuh=np.log(ads.duration*ads.cnt_target_users_hour),
+	sqrt_dur_x_ctuh=np.sqrt(ads.duration*ads.cnt_target_users_hour),
+	npub_x_bpub=ads.n_publishers*ads.big_publishers,
+	log_npub_x_bpub=np.log(ads.n_publishers*ads.big_publishers),
+	sqrt_npub_x_bpub=np.sqrt(ads.n_publishers*ads.big_publishers),
+	npub_x_cufc=ads.n_publishers*ads.cnt_users_for_cpm,
+	log_npub_x_cufc=np.log(ads.n_publishers*ads.cnt_users_for_cpm),
+	sqrt_npub_x_cufc=np.sqrt(ads.n_publishers*ads.cnt_users_for_cpm),
+	npub_x_ctuc=ads.n_publishers*ads.cnt_target_users_cpm,
+	log_npub_x_ctuc=np.log(ads.n_publishers*ads.cnt_target_users_cpm),
+	sqrt_npub_x_ctuc=np.sqrt(ads.n_publishers*ads.cnt_target_users_cpm),
+	npub_x_ctuh=ads.n_publishers*ads.cnt_target_users_hour,
+	log_npub_x_ctuh=np.log(ads.n_publishers*ads.cnt_target_users_hour),
+	sqrt_npub_x_ctuh=np.sqrt(ads.n_publishers*ads.cnt_target_users_hour),
+	bpub_x_cufc=ads.big_publishers*ads.cnt_users_for_cpm,
+	log_bpub_x_cufc=np.log(ads.big_publishers*ads.cnt_users_for_cpm),
+	sqrt_bpub_x_cufc=np.sqrt(ads.big_publishers*ads.cnt_users_for_cpm),
+	bpub_x_ctuc=ads.big_publishers*ads.cnt_target_users_cpm,
+	log_bpub_x_ctuc=np.log(ads.big_publishers*ads.cnt_target_users_cpm),
+	sqrt_bpub_x_ctuc=np.sqrt(ads.big_publishers*ads.cnt_target_users_cpm),
+	bpub_x_ctuh=ads.big_publishers*ads.cnt_target_users_hour,
+	log_bpub_x_ctuh=np.log(ads.big_publishers*ads.cnt_target_users_hour),
+	sqrt_bpub_x_ctuh=np.sqrt(ads.big_publishers*ads.cnt_target_users_hour),
+	cufc_x_ctuc=ads.cnt_users_for_cpm*ads.cnt_target_users_cpm,
+	log_cufc_x_ctuc=np.log(ads.cnt_users_for_cpm*ads.cnt_target_users_cpm),
+	sqrt_cufc_x_ctuc=np.sqrt(ads.cnt_users_for_cpm*ads.cnt_target_users_cpm),
+	cufc_x_ctuh=ads.cnt_users_for_cpm*ads.cnt_target_users_hour,
+	log_cufc_x_ctuh=np.log(ads.cnt_users_for_cpm*ads.cnt_target_users_hour),
+	sqrt_cufc_x_ctuh=np.sqrt(ads.cnt_users_for_cpm*ads.cnt_target_users_hour),
+	ctuc_x_ctuh=ads.cnt_target_users_cpm*ads.cnt_target_users_hour,
+	log_ctuc_x_ctuh=np.log(ads.cnt_target_users_cpm*ads.cnt_target_users_hour),
+	sqrt_ctuc_x_ctuh=np.sqrt(ads.cnt_target_users_cpm*ads.cnt_target_users_hour),
+)
+print('cpm_x_dur ', ads_featured[['cpm_x_dur', 'at_least_one']].corr()['cpm_x_dur']['at_least_one'])
+print('log_cpm_x_dur ', ads_featured[['log_cpm_x_dur', 'at_least_one']].corr()['log_cpm_x_dur']['at_least_one'])
+print('sqrt_cpm_x_dur ', ads_featured[['sqrt_cpm_x_dur', 'at_least_one']].corr()['sqrt_cpm_x_dur']['at_least_one'])
+print('cpm_x_npub ', ads_featured[['cpm_x_npub', 'at_least_one']].corr()['cpm_x_npub']['at_least_one'])
+print('log_cpm_x_npub ', ads_featured[['log_cpm_x_npub', 'at_least_one']].corr()['log_cpm_x_npub']['at_least_one'])
+print('sqrt_cpm_x_npub ', ads_featured[['sqrt_cpm_x_npub', 'at_least_one']].corr()['sqrt_cpm_x_npub']['at_least_one'])
+print('cpm_x_bpub ', ads_featured[['cpm_x_bpub', 'at_least_one']].corr()['cpm_x_bpub']['at_least_one'])
+print('log_cpm_x_bpub ', ads_featured[['log_cpm_x_bpub', 'at_least_one']].corr()['log_cpm_x_bpub']['at_least_one'])
+print('sqrt_cpm_x_bpub ', ads_featured[['sqrt_cpm_x_bpub', 'at_least_one']].corr()['sqrt_cpm_x_bpub']['at_least_one'])
+print('cpm_x_cufc ', ads_featured[['cpm_x_cufc', 'at_least_one']].corr()['cpm_x_cufc']['at_least_one'])
+print('log_cpm_x_cufc ', ads_featured[['log_cpm_x_cufc', 'at_least_one']].corr()['log_cpm_x_cufc']['at_least_one'])
+print('sqrt_cpm_x_cufc ', ads_featured[['sqrt_cpm_x_cufc', 'at_least_one']].corr()['sqrt_cpm_x_cufc']['at_least_one'])
+print('cpm_x_ctuc ', ads_featured[['cpm_x_ctuc', 'at_least_one']].corr()['cpm_x_ctuc']['at_least_one'])
+print('log_cpm_x_ctuc ', ads_featured[['log_cpm_x_ctuc', 'at_least_one']].corr()['log_cpm_x_ctuc']['at_least_one'])
+print('sqrt_cpm_x_ctuc ', ads_featured[['sqrt_cpm_x_ctuc', 'at_least_one']].corr()['sqrt_cpm_x_ctuc']['at_least_one'])
+print('cpm_x_ctuh ', ads_featured[['cpm_x_ctuh', 'at_least_one']].corr()['cpm_x_ctuh']['at_least_one'])
+print('log_cpm_x_ctuh ', ads_featured[['log_cpm_x_ctuh', 'at_least_one']].corr()['log_cpm_x_ctuh']['at_least_one'])
+print('sqrt_cpm_x_ctuh ', ads_featured[['sqrt_cpm_x_ctuh', 'at_least_one']].corr()['sqrt_cpm_x_ctuh']['at_least_one'])
+print('dur_x_npub ', ads_featured[['dur_x_npub', 'at_least_one']].corr()['dur_x_npub']['at_least_one'])
+print('log_dur_x_npub ', ads_featured[['log_dur_x_npub', 'at_least_one']].corr()['log_dur_x_npub']['at_least_one'])
+print('sqrt_dur_x_npub ', ads_featured[['sqrt_dur_x_npub', 'at_least_one']].corr()['sqrt_dur_x_npub']['at_least_one'])
+print('dur_x_bpub ', ads_featured[['dur_x_bpub', 'at_least_one']].corr()['dur_x_bpub']['at_least_one'])
+print('log_dur_x_bpub ', ads_featured[['log_dur_x_bpub', 'at_least_one']].corr()['log_dur_x_bpub']['at_least_one'])
+print('sqrt_dur_x_bpub ', ads_featured[['sqrt_dur_x_bpub', 'at_least_one']].corr()['sqrt_dur_x_bpub']['at_least_one'])
+print('dur_x_cufc ', ads_featured[['dur_x_cufc', 'at_least_one']].corr()['dur_x_cufc']['at_least_one'])
+print('log_dur_x_cufc ', ads_featured[['log_dur_x_cufc', 'at_least_one']].corr()['log_dur_x_cufc']['at_least_one'])
+print('sqrt_dur_x_cufc ', ads_featured[['sqrt_dur_x_cufc', 'at_least_one']].corr()['sqrt_dur_x_cufc']['at_least_one'])
+print('dur_x_ctuc ', ads_featured[['dur_x_ctuc', 'at_least_one']].corr()['dur_x_ctuc']['at_least_one'])
+print('log_dur_x_ctuc ', ads_featured[['log_dur_x_ctuc', 'at_least_one']].corr()['log_dur_x_ctuc']['at_least_one'])
+print('sqrt_dur_x_ctuc ', ads_featured[['sqrt_dur_x_ctuc', 'at_least_one']].corr()['sqrt_dur_x_ctuc']['at_least_one'])
+print('dur_x_ctuh ', ads_featured[['dur_x_ctuh', 'at_least_one']].corr()['dur_x_ctuh']['at_least_one'])
+print('log_dur_x_ctuh ', ads_featured[['log_dur_x_ctuh', 'at_least_one']].corr()['log_dur_x_ctuh']['at_least_one'])
+print('sqrt_dur_x_ctuh ', ads_featured[['sqrt_dur_x_ctuh', 'at_least_one']].corr()['sqrt_dur_x_ctuh']['at_least_one'])
+print('npub_x_bpub ', ads_featured[['npub_x_bpub', 'at_least_one']].corr()['npub_x_bpub']['at_least_one'])
+print('log_npub_x_bpub ', ads_featured[['log_npub_x_bpub', 'at_least_one']].corr()['log_npub_x_bpub']['at_least_one'])
+print('sqrt_npub_x_bpub ', ads_featured[['sqrt_npub_x_bpub', 'at_least_one']].corr()['sqrt_npub_x_bpub']['at_least_one'])
+print('npub_x_cufc ', ads_featured[['npub_x_cufc', 'at_least_one']].corr()['npub_x_cufc']['at_least_one'])
+print('log_npub_x_cufc ', ads_featured[['log_npub_x_cufc', 'at_least_one']].corr()['log_npub_x_cufc']['at_least_one'])
+print('sqrt_npub_x_cufc ', ads_featured[['sqrt_npub_x_cufc', 'at_least_one']].corr()['sqrt_npub_x_cufc']['at_least_one'])
+print('npub_x_ctuc ', ads_featured[['npub_x_ctuc', 'at_least_one']].corr()['npub_x_ctuc']['at_least_one'])
+print('log_npub_x_ctuc ', ads_featured[['log_npub_x_ctuc', 'at_least_one']].corr()['log_npub_x_ctuc']['at_least_one'])
+print('sqrt_npub_x_ctuc ', ads_featured[['sqrt_npub_x_ctuc', 'at_least_one']].corr()['sqrt_npub_x_ctuc']['at_least_one'])
+print('npub_x_ctuh ', ads_featured[['npub_x_ctuh', 'at_least_one']].corr()['npub_x_ctuh']['at_least_one'])
+print('log_npub_x_ctuh ', ads_featured[['log_npub_x_ctuh', 'at_least_one']].corr()['log_npub_x_ctuh']['at_least_one'])
+print('sqrt_npub_x_ctuh ', ads_featured[['sqrt_npub_x_ctuh', 'at_least_one']].corr()['sqrt_npub_x_ctuh']['at_least_one'])
+print('bpub_x_cufc ', ads_featured[['bpub_x_cufc', 'at_least_one']].corr()['bpub_x_cufc']['at_least_one'])
+print('log_bpub_x_cufc ', ads_featured[['log_bpub_x_cufc', 'at_least_one']].corr()['log_bpub_x_cufc']['at_least_one'])
+print('sqrt_bpub_x_cufc ', ads_featured[['sqrt_bpub_x_cufc', 'at_least_one']].corr()['sqrt_bpub_x_cufc']['at_least_one'])
+print('bpub_x_ctuc ', ads_featured[['bpub_x_ctuc', 'at_least_one']].corr()['bpub_x_ctuc']['at_least_one'])
+print('log_bpub_x_ctuc ', ads_featured[['log_bpub_x_ctuc', 'at_least_one']].corr()['log_bpub_x_ctuc']['at_least_one'])
+print('sqrt_bpub_x_ctuc ', ads_featured[['sqrt_bpub_x_ctuc', 'at_least_one']].corr()['sqrt_bpub_x_ctuc']['at_least_one'])
+print('bpub_x_ctuh ', ads_featured[['bpub_x_ctuh', 'at_least_one']].corr()['bpub_x_ctuh']['at_least_one'])
+print('log_bpub_x_ctuh ', ads_featured[['log_bpub_x_ctuh', 'at_least_one']].corr()['log_bpub_x_ctuh']['at_least_one'])
+print('sqrt_bpub_x_ctuh ', ads_featured[['sqrt_bpub_x_ctuh', 'at_least_one']].corr()['sqrt_bpub_x_ctuh']['at_least_one'])
+print('cufc_x_ctuc ', ads_featured[['cufc_x_ctuc', 'at_least_one']].corr()['cufc_x_ctuc']['at_least_one'])
+print('log_cufc_x_ctuc ', ads_featured[['log_cufc_x_ctuc', 'at_least_one']].corr()['log_cufc_x_ctuc']['at_least_one'])
+print('sqrt_cufc_x_ctuc ', ads_featured[['sqrt_cufc_x_ctuc', 'at_least_one']].corr()['sqrt_cufc_x_ctuc']['at_least_one'])
+print('cufc_x_ctuh ', ads_featured[['cufc_x_ctuh', 'at_least_one']].corr()['cufc_x_ctuh']['at_least_one'])
+print('log_cufc_x_ctuh ', ads_featured[['log_cufc_x_ctuh', 'at_least_one']].corr()['log_cufc_x_ctuh']['at_least_one'])
+print('sqrt_cufc_x_ctuh ', ads_featured[['sqrt_cufc_x_ctuh', 'at_least_one']].corr()['sqrt_cufc_x_ctuh']['at_least_one'])
+print('ctuc_x_ctuh ', ads_featured[['ctuc_x_ctuh', 'at_least_one']].corr()['ctuc_x_ctuh']['at_least_one'])
+print('log_ctuc_x_ctuh ', ads_featured[['log_ctuc_x_ctuh', 'at_least_one']].corr()['log_ctuc_x_ctuh']['at_least_one'])
+print('sqrt_ctuc_x_ctuh ', ads_featured[['sqrt_ctuc_x_ctuh', 'at_least_one']].corr()['sqrt_ctuc_x_ctuh']['at_least_one'])
